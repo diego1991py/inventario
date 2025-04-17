@@ -1,7 +1,7 @@
 "Clase Producto"
 
 """Atributos:
-        id (int) : autoincremento
+        id (int) : número unico
         nombre (str) : unico
         precio (float) : mayor que cero
         cantidad (int) : mayor o igual que cero"""
