@@ -1,5 +1,4 @@
 id,nombre,precio,cantidad
-1,Mouse,78000.0,25
-2,Pantalla,350000.0,54
-1,CPU,800000.0,64
-4,Cargador,75000.0,24
+1,Teclado,50000.0,3
+2,Pantalla,125000.0,2
+1,Lápiz,1000.0,500

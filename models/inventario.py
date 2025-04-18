@@ -27,8 +27,11 @@ class Inventario:
             
         
     def nuevo_producto(self, producto): #Agrega el producto a la lista
-        self.lista.append(producto)
-        return self.lista
+                if producto["id"] in self.lista:
+                     return "ID ya existe"
+                else:
+                   self.lista.append(producto)
+                return self.lista
                 
     
     def guardar_productos(self): #Guarda la lista en csv
@@ -37,7 +40,7 @@ class Inventario:
             escritor = csv.DictWriter(archivo, fieldnames=campos)
             escritor.writeheader()
             for linea in self.lista:
-                escritor.writerow(linea)
+                    escritor.writerow(linea)
 
     def ver_productos(self): #Imprime los productos cargados en la lista
             self.cargar_productos()
