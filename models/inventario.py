@@ -24,6 +24,12 @@ class Inventario:
             for linea in lector:
                 self.lista.append(linea)
         return self.lista
+    
+    def ver_id(self): #Lee la longitud de la lista y suma 1 para el ID, evita duplicados
+         self.cargar_productos()
+         nuevo_id = len(self.lista)+1
+         return nuevo_id              
+                         
             
         
     def nuevo_producto(self, producto): #Agrega el producto a la lista
@@ -31,6 +37,7 @@ class Inventario:
                      return "ID ya existe"
                 else:
                    self.lista.append(producto)
+                   self.guardar_productos()
                 return self.lista
                 
     
@@ -48,22 +55,3 @@ class Inventario:
                 print(f"ID= {linea["id"]}\nnombre= {linea["nombre"]}\nprecio= ${linea["precio"]}\ncantidad= {linea["cantidad"]} unidades\n------")
             
                 
-        
-
-"""nuevo_pro = Producto(1,"CPU",500000, 10)
-nuevo_pro_dos = Producto(2,"Teclado",25000, 5)
-convertir = nuevo_pro.to_dict()
-convertir_dos = nuevo_pro_dos.to_dict()
-
-mi_inve = Inventario()
-
-mi_inve.nuevo_producto(convertir)
-
-mi_inve.guardar_productos()
-
-mi_inve.nuevo_producto(convertir_dos)
-mi_inve.guardar_productos()
-
-mi_inve.ver_productos()"""
-
-
