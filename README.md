@@ -1,2 +1,2 @@
 # inventario
-Sistema de inventario con Python para gestión de productos.
+Sistema de inventario sencillo con Python para gestión de productos con persistencia de datos en CSV.
