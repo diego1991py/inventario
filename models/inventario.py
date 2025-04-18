@@ -9,8 +9,6 @@
         guardar_productos : Envía los productos al CSV
         ver_productos :  Carga la lista de productos desde el csv, mostrandolos visualmete
         """
-
-from producto import Producto
 import os, csv
 
 ruta_archivo = os.path.join(os.path.dirname(__file__), "..\\data", "archivo.csv")
@@ -42,14 +40,14 @@ class Inventario:
                 escritor.writerow(linea)
 
     def ver_productos(self): #Imprime los productos cargados en la lista
+            self.cargar_productos()
             for linea in self.lista:
-                for clave, valor in linea.items():
-                    print(f"{clave} : {linea[clave]}")
+                print(f"ID= {linea["id"]}\nnombre= {linea["nombre"]}\nprecio= ${linea["precio"]}\ncantidad= {linea["cantidad"]} unidades\n------")
             
                 
         
 
-nuevo_pro = Producto(1,"CPU",500000, 10)
+"""nuevo_pro = Producto(1,"CPU",500000, 10)
 nuevo_pro_dos = Producto(2,"Teclado",25000, 5)
 convertir = nuevo_pro.to_dict()
 convertir_dos = nuevo_pro_dos.to_dict()
@@ -63,6 +61,6 @@ mi_inve.guardar_productos()
 mi_inve.nuevo_producto(convertir_dos)
 mi_inve.guardar_productos()
 
-mi_inve.ver_productos()
+mi_inve.ver_productos()"""
 
 
