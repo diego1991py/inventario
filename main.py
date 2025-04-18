@@ -1,5 +1,6 @@
 from models.producto import Producto
 from models.inventario import Inventario
+import validaciones.excepciones as val
 
 
 inventarios = Inventario()
@@ -14,16 +15,26 @@ while True:
         print(f"{opcion} no es la opción correcta")
 
     elif opcion == "1":
+            try:                 
+                id = inventarios.ver_id()
+                nombre = input("Agregar nombre: ").strip()
+                precio = float(input("Agregar precio: ").strip())
+                cantidad = int(input("Agregar cantidad: ").strip())
+               
+                val.verificar_mayores(id, precio, cantidad)
             
-            id = inventarios.ver_id()
-            nombre = input("Agregar nombre: ").strip()
-            precio = float(input("Agregar precio: ").strip())
-            cantidad = int(input("Agregar cantidad: ").strip())
+                productos = Producto(id, nombre, precio, cantidad)
+                convertir = productos.to_dict()
+                inventarios.nuevo_producto(convertir)
+                print(f"Se agrego el producto {productos.__str__()}")
 
-            productos = Producto(id, nombre, precio, cantidad)
-            convertir = productos.to_dict()
-            inventarios.nuevo_producto(convertir)
-            print(f"Se agrego el producto {productos.__str__()}")
+            except (ValueError, NameError, TypeError):
+                 print("Los datos tienen que ser de tipo númericos")
+
+            except val.VerificarDatos as e:
+                 print(f"Error: {e}")
+
+            
          
     elif opcion == "2":
          inventarios.ver_productos()
