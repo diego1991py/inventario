@@ -25,10 +25,13 @@ class Inventario:
                 self.lista.append(linea)
         return self.lista
     
-    def ver_id(self): #Lee la longitud de la lista y suma 1 para el ID, evita duplicados
+    def ver_id(self): #Agrega los ID a una nueva lista y devulve el mayor, se suma 1 para seer el ID del próximo Producto
          self.cargar_productos()
-         nuevo_id = len(self.lista)+1
-         return nuevo_id              
+         lista_id = []
+         for dato in self.lista:
+              lista_id.append(int(dato["id"]))
+         id = max(lista_id)+1
+         return id             
                          
             
         

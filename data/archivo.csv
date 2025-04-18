@@ -2,7 +2,8 @@ id,nombre,precio,cantidad
 1,Bafle,90000.0,4
 2,Teclado,80000.0,4
 3,CPU,800000.0,10
-4,Cargador,50000.0,45
 5,Silla,50000.0,45
 6,Celular,700000.0,40
 7,Soporte,125000.0,45
+8,HDMI,65000.0,12
+9,Cable de red,12000.0,54
