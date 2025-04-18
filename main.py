@@ -28,6 +28,13 @@ while True:
     elif opcion == "2":
          inventarios.ver_productos()
 
+    elif opcion == "3":
+         ver_id = input("Ingresar ID para ver producto: ").strip()
+         resultado = inventarios.ver_producto_id(ver_id)
+         if resultado:
+            print(f"id= {resultado["id"]}\nnombre= {resultado["nombre"]}\nprecio= ${resultado["precio"]}\ncantidad= {resultado["cantidad"]} unidades")
+         else:
+            print(f"el producto con id {ver_id} no existe")
     elif opcion == "0":
          print("Gracias por visitarnos")
          break

@@ -55,3 +55,9 @@ class Inventario:
                 print(f"ID= {linea["id"]}\nnombre= {linea["nombre"]}\nprecio= ${linea["precio"]}\ncantidad= {linea["cantidad"]} unidades\n------")
             
                 
+    def ver_producto_id(self, id):
+        self.cargar_productos()
+        for producto in self.lista:
+             if producto["id"] == id:
+                  return producto
+        return None
